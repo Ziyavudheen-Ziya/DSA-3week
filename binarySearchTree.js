@@ -84,7 +84,6 @@ class BinarySearchTree {
     }
   }
 
-  
   min(root) {
     if (!root.left) {
       return root.value;
@@ -169,7 +168,7 @@ console.log("DFS");
 console.log("-------------------------------------------");
 console.log("BFS");
 console.log("***************************************");
-bst.levelOrder()
+bst.levelOrder();
 console.log("****************************************");
 console.log("BFS");
 
