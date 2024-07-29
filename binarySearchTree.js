@@ -179,7 +179,7 @@ console.log("BFS");
 // console.log(bst.max(bst.root));
 
 bst.levelOrder();
-bst.delete(3);
+bst.delete(7);
 console.log("deleted");
 bst.levelOrder();
 

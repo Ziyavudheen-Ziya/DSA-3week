@@ -24,32 +24,32 @@ class Trie {
     curr.isWordEnd = true;
   }
 
-  contains(word) {
-    let curr = this.root;
+  // contains(word) {
+  //   let curr = this.root;
 
-    for (let i = 0; i < word.length; i++) {
-      let charToFind = word[i];
-      if (!(charToFind in curr.children)) {
-        return false;
-      }
-      curr = curr.children[charToFind];
-    }
+  //   for (let i = 0; i < word.length; i++) {
+  //     let charToFind = word[i];
+  //     if (!(charToFind in curr.children)) {
+  //       return false;
+  //     }
+  //     curr = curr.children[charToFind];
+  //   }
 
-    return curr.isWordEnd;
-  }
+  //   return curr.isWordEnd;
+  // }
 
-  startWithPrefix(prefix) {
-    let curr = this.root;
-    for (let i = 0; i < prefix.length; i++) {
-      let charToFind = prefix[i];
-      if (!(charToFind in curr.children)) {
-        return false;
-      }
-      curr = curr.children[charToFind];
-    }
+  // startWithPrefix(prefix) {
+  //   let curr = this.root;
+  //   for (let i = 0; i < prefix.length; i++) {
+  //     let charToFind = prefix[i];
+  //     if (!(charToFind in curr.children)) {
+  //       return false;
+  //     }
+  //     curr = curr.children[charToFind];
+  //   }
 
-    return true;
-  }
+  //   return true;
+  // }
 
   printWord(curr = this.root, word = "", result = []) {
     if (curr.isWordEnd && Object.entries(curr.children).length === 0) {
@@ -73,5 +73,5 @@ trie.insert("Sannoj");
 trie.insert("Akhil");
 trie.insert("Liston");
 console.log(trie.root);
-console.log(trie.contains("Pranav"));
+// console.log(trie.contains("Pranav"));
 console.log(trie.printWord());

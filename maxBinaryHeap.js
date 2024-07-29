@@ -1,44 +1,42 @@
-class MaxBinaryHeap {
-  constructor() {
-    this.value = [41, 39, 33, 18, 27, 12];
-  }
+class MinBinaryHeap{
 
-  insert(element) {
-    this.value.push(element);
-    this.bubbleUp();
-  }
+   constructor(){
 
-  bubbleUp() {
-    let index = this.value.length - 1;
-    const element = this.value[index];
-    while (index > 0) {
-      let parentIndex = Math.floor((index - 1) / 2);
-      let parent = this.value[parentIndex];
-      //  if(element>parent){
+     this.arr = []
+   }
 
-      //       this.value[parentIndex] = element
-      //       this.value[index] = parent
-      //       index = parentIndex
-      //  }
+   insert(element){
 
-      if (element <= parent) break;
+      this.arr.push(element)
+      this.bubbleUp()
+   }
 
-      this.value[parentIndex] = element;
-      this.value[index] = parent;
-      index = parentIndex;
-    }
-  }
+   bubbleUp(){
+
+     let index = this.arr.length-1
+     let element = this.arr[index]
+
+     while(index>0){
+
+       let parentIndex = Math.floor((index-1)/2)
+       let parent = this.arr[parentIndex]
+        
+
+       if(element>=parent)break;
+
+       this.arr[parentIndex] = element
+       this.arr[index] = parent
+       index = parentIndex
+     }
+   }
 }
 
-let heap = new MaxBinaryHeap();
+const heap = new MinBinaryHeap()
 
-// heap.insert(41)
-// heap.insert(39)
-// heap.insert(33)
-// heap.insert(18)
-// heap.insert(27)
-// heap.insert(12)
+heap.insert(80)
+heap.insert(40)
+heap.insert(15)
+heap.insert(60)
+heap.insert(4)
 
-heap.insert(55);
-console.log(heap);
-console.log(heap.value);
+console.log(heap.arr);
